@@ -1,6 +1,5 @@
 import requests
 import random
-
 url = ('http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words')
 #stores the API url
 
