@@ -18,8 +18,9 @@ good_letters = []
 bad_letters = []
 guess_limit = 6
 
-print secret_word
-print unique_letters
-print good_letters
-print bad_letters
-print guess_limit
+#Debugging
+#print secret_word
+#print unique_letters
+#print good_letters
+#print bad_letters
+#print guess_limit
