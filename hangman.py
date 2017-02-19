@@ -28,9 +28,9 @@ while True:
 
     secret_word = random.choice(words)
     #empty list to hold bad guesses
-    bad_guesses = []
+    bad_letters = []
     #empty list to hold good guesses
-    good_guesses = []
+    good_letters = []
 
     # Game play loop - runs during game play until the player losses
     #conditional while loop that limits the player to 7 guesses by comparing it to the
@@ -39,13 +39,13 @@ while True:
     #the length of good_guesses and length of the list of secret word can't be
     #the same length in order to keep the game going.
     #both conditions need to be true or the game ends
-    while len(bad_guesses) < 7 and len(good_guesses) != len(list(secret_word)):
+    while len(bad_letters) < 7 and len(good_letters) != len(list(secret_word)):
         # for loop iterates through every letter in secret word list
         for letter in secret_word:
             # if the letter is in the good_guesses list
             # print the letter (on the same line)
             # if not print an underscore (on the same line)
-            if letter in good_guesses:
+            if letter in good_letters:
                 print letter,
             else:
                 print '_',
@@ -53,7 +53,7 @@ while True:
         # print blank space for spacing
         print('')
         # informs the player how many guesses they have left by counting the length of bad_guesses
-        print('Strikes: {}/7'.format(len(bad_guesses)))
+        print('Strikes: {}/7'.format(len(bad_letters)))
         # print blank space for spacing
         print('')
 
@@ -66,7 +66,7 @@ while True:
             print("You can only guess a single letter!")
             continue
         # checks both lists if the input letter exists, prints error message and continues
-        elif guess in bad_guesses or guess in good_guesses:
+        elif guess in bad_letters or guess in good_letters:
             print("You've already guessed that letter!")
             continue
         # checks that the input characters are only letters, prints error message and continues
@@ -77,14 +77,14 @@ while True:
         # if the input letter exists in the secret_word
         if guess in secret_word:
             # append that letter to good_guesses list
-            good_guesses.append(guess)
+            good_letters.append(guess)
             # player wins if the lenght of both list match, prints success message and exist
-            if len(good_guesses) == len(list(secret_word)):
+            if len(good_letters) == len(list(secret_word)):
                 print("You win! The word was {}".format(secret_word))
                 break
-            else:
-                # if it is a bad guess append it to the bad_letters list
-                bad_guesses.append(guess)
+        else:
+            # if it is a bad guess append it to the bad_letters list
+            bad_letters.append(guess)
     # ends the game playing while loop if player runs out of guesses
     else:
         print("You didn't guess it! My word was {}".format(secret_word))
