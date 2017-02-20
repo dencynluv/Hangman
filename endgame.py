@@ -1,19 +1,15 @@
 # end game module
 
+# imports global variables needed into this module
 from setup import good_letters, bad_letters, unique_letters, secret_word, guess_limit
-# from hangman import guess
 
-#removed guess from parameter
+
+# function to end the game
 def is_game_over():
-    # if guess in good_letters or guess in bad_letters:
-    #     print "You've already guessed that letter!"
-    #     return False
-
-    # if guess in unique_letters:
-    #     good_letters.append(guess)
-    # else:
-    #     bad_letters.append(guess)
-
+    # both lists have to match in length in order to win the game
+    # or else
+    # bad letters and the guess limit have to match to lose the game
+    # both statements return True which ends the game loop
     if len(unique_letters) == len(good_letters):
         print "\n" * 15
         print "You win! The word was {}".format(secret_word)
