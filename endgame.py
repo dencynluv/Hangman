@@ -15,8 +15,12 @@ def is_game_over():
     #     bad_letters.append(guess)
 
     if len(unique_letters) == len(good_letters):
+        print "\n" * 15
         print "You win! The word was {}".format(secret_word)
+        print "\n" * 15
         return True
     elif len(bad_letters) == guess_limit:
+        print "\n" * 15
         print "You didn't guess it! My word was {}".format(secret_word)
+        print "\n" * 15
         return True
