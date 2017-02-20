@@ -8,7 +8,7 @@ from endgame import is_game_over
 #Welcome loop
 while True:
 #prompt the user to start the game or quit(stand alone function?)
-    start = raw_input("Press enter/return to start, or Q to quit")
+    start = raw_input("Press enter/return to start, or Q to quit \n >>> ")
     #check if the player decides to quit
     if start.lower() == 'q':
         print "\n"
