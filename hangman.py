@@ -8,7 +8,7 @@ from endgame import is_game_over
 #Welcome loop
 while True:
 #prompt the user to start the game or quit(stand alone function?)
-    start = raw_input("Press enter/return to start, or Q to quit ")
+    start = raw_input("Press enter/return to start, or Q to quit")
     #check if the player decides to quit
     if start.lower() == 'q':
         print "\n"
@@ -21,17 +21,22 @@ while True:
     # While the game is NOT over - keep going
     while not is_game_over():
 # draws the letter spaces (stand alone function?)
+        # informs the user of guesses remaining
         print "\n"
         print "You have {} guesses remaining. Make them count!".format(guess_limit)
         print "\n"
 
+        # loop through bad_letters list and displays already guessed letters to the user
         for letter in bad_letters:
             print letter,
         print "\n"
 
+        # loops through each letter in the secret word
         for letter in secret_word:
+            # checks if the letter is in good letters list and display to the user
             if letter in good_letters:
                 print letter,
+            # prints an underscore for every letter in secret word
             else:
                 print "_",
         print "\n"
@@ -60,17 +65,25 @@ while True:
         if guess in unique_letters:
             # append that letter to good_guesses list
             good_letters.append(guess)
+            # correct guess random message displayed to user
             print right_message
         else:
-            # if bad guess append it to the bad_letters list
+            # append bad guesses to the bad_letters list
             bad_letters.append(guess)
+            # decrement the guess limit everytime a bad guess is added to the bad_letters list
             guess_limit -= 1
             # counter -= 1
+            # wrong guess random message displayed to user
             print wrong_message
+    # if game play loop ends due to win or loss
     else:
+        # ask user if they want to play again and lower case the response
         play_again = raw_input("Play again? Y/n ").lower()
-        if play_again != 'n':
+        # if the response is NOT 'n' - so it is 'y'
+        if play_again != "n":
+            # continue the loop and start the game again
             continue
+        # if not break out of the loop and end game
         else:
             print "\n"
             print "Thanks for playing!"
