@@ -1,5 +1,6 @@
 #setup module
 
+# imports needed libraries
 import requests
 import random
 
@@ -12,22 +13,38 @@ r = requests.get(url)
 # the data returns as one giant string, where every word is seperated by newline char (\n)
 
 words = r.text.split()
+# calling text property to read the text of the r object
+# using split method to split the giant string into a list of individual words
 
 secret_word = random.choice(words)
-unique_letters = set(list(secret_word))
+# picks a random word from the list of words
+
+unique_letters = set(secret_word)
+# turns the secret word into a list of letters and removes any duplicates
+
 good_letters = []
+# empty list to collect good guesses made by the user
+
 bad_letters = []
+# empty list to collect bad guesses made by the user
+
 guess_limit = 6
+# setting the guessing limit to 6
 
 toasts = ["Nice!", "You got this!", "Great guess!", "Good pick!", "Excellent choice!", "Good job!"]
 right_message = random.choice(toasts)
+# list with messages a user sees when a correct guess is made
+# selected randomly
 
 wrongs = ["Incorrect!", "Guess again", "Try again", "Keep trying!", "I don't think so!"]
 wrong_message = random.choice(wrongs)
+# list with messages a user sees when a wrong guess is made
+# selected randomly
+
 
 #Debugging
 # print secret_word
 # print unique_letters
-#print good_letters
-#print bad_letters
-#print guess_limit
+# print good_letters
+# print bad_letters
+# print guess_limit
