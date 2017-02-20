@@ -1,4 +1,5 @@
 #setup module
+
 import requests
 import random
 
@@ -18,9 +19,15 @@ good_letters = []
 bad_letters = []
 guess_limit = 6
 
+toasts = ["Nice!", "You got this!", "Great guess!", "Good pick!", "Excellent choice!", "Good job!"]
+right_message = random.choice(toasts)
+
+wrongs = ["Incorrect!", "Guess again", "Try again", "Keep trying!", "I don't think so!"]
+wrong_message = random.choice(wrongs)
+
 #Debugging
-#print secret_word
-#print unique_letters
+# print secret_word
+# print unique_letters
 #print good_letters
 #print bad_letters
 #print guess_limit
