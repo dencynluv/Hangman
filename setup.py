@@ -31,16 +31,6 @@ bad_letters = []
 guess_limit = 6
 # setting the guessing limit to 6
 
-toasts = ["Nice!", "You got this!", "Great guess!", "Good pick!", "Excellent choice!", "Good job!"]
-right_message = random.choice(toasts)
-# list with messages a user sees when a correct guess is made
-# selected randomly
-
-wrongs = ["Incorrect!", "Guess again", "Try again", "Keep trying!", "I don't think so!"]
-wrong_message = random.choice(wrongs)
-# list with messages a user sees when a wrong guess is made
-# selected randomly
-
 
 #Debugging
 # print secret_word

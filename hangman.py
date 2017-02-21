@@ -1,6 +1,6 @@
 #game play module
-
-from setup import unique_letters, good_letters, bad_letters, guess_limit, secret_word, right_message, wrong_message
+import random
+from setup import unique_letters, good_letters, bad_letters, guess_limit, secret_word
 from endgame import is_game_over
 
 # counter = 6
@@ -20,6 +20,15 @@ while True:
 
     # While the game is NOT over - keep going
     while not is_game_over():
+        # list with messages a user sees when a correct guess is made, selected randomly        
+        toasts = ["Nice!", "You got this!", "Great guess!", "Good pick!", "Excellent choice!", "Good job!", "You got it right!"]
+        right_message = random.choice(toasts)
+
+        # list with messages a user sees when a wrong guess is made, selected randomly
+        wrongs = ["Incorrect!", "Guess again", "Try again", "Keep trying!", "I don't think so!", "You got it wrong"]
+        wrong_message = random.choice(wrongs)
+
+
 # draws the letter spaces (stand alone function?)
         # informs the user of guesses remaining
         print "\n"
