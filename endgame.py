@@ -20,3 +20,5 @@ def is_game_over():
         print "You didn't guess it! My word was {}".format(secret_word)
         print "\n" * 15
         return True
+    else:
+        return False

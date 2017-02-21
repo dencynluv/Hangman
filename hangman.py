@@ -5,14 +5,19 @@ from endgame import is_game_over
 
 # counter = 6
 
+# Welcome message (stand alone function?)
+print "\n" * 15
+print "Welcome to Hangman! A letter guessing game. Can you guess my secret word?"
+print "\n" * 15
+
 #Welcome loop
 while True:
 #prompt the user to start the game or quit(stand alone function?)
-    start = raw_input("Press enter/return to start, or Q to quit \n >>> ")
+    start = raw_input("Press enter/return to start, or 'Q' to quit \n >>> ")
     #check if the player decides to quit
     if start.lower() == 'q':
         print "\n"
-        print "Goodbye!"
+        print "Goodbye! I guess you don't like challenges."
         print "\n"
         #breaks out of the loop
         break
@@ -20,7 +25,7 @@ while True:
 
     # While the game is NOT over - keep going
     while not is_game_over():
-        # list with messages a user sees when a correct guess is made, selected randomly        
+        # list with messages a user sees when a correct guess is made, selected randomly
         toasts = ["Nice!", "You got this!", "Great guess!", "Good pick!", "Excellent choice!", "Good job!", "You got it right!"]
         right_message = random.choice(toasts)
 
@@ -81,13 +86,13 @@ while True:
             bad_letters.append(guess)
             # decrement the guess limit everytime a bad guess is added to the bad_letters list
             guess_limit -= 1
-            # counter -= 1
+            # counter -= 1 #use if I want to display guess left and the guess limit
             # wrong guess random message displayed to user
             print wrong_message
     # if game play loop ends due to win or loss
     else:
         # ask user if they want to play again and lower case the response
-        play_again = raw_input("Play again? Y/n ").lower()
+        play_again = raw_input("Play again? 'Y' for yes, 'N' for no \n >>> ").lower()
         # if the response is NOT 'n' - so it is 'y'
         if play_again != "n":
             # continue the loop and start the game again
